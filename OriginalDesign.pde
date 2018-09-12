@@ -33,7 +33,7 @@ void assignVars()
   x = 50;
   y = height / 2;
   
-  maxCircleDiameter = 1.25 * sqrt(sq(width / 2) + sq(height / 2));
+  maxCircleDiameter = 2 * sqrt(sq(width / 2) + sq(height / 2));
   minCircleDiameter = 30;
 }
 
