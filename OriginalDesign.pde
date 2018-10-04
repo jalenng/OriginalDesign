@@ -1,4 +1,4 @@
-int INITIAL_BALL_DIAMETER = 50;
+int INITIAL_BALL_DIAMETER = 75;
 float ballDiameter = INITIAL_BALL_DIAMETER;
 
 void setup()
@@ -39,7 +39,7 @@ void assignVars()
 
 void draw()
 {
-  background(0);
+  background(255);
   drawWalls();
   drawBall();
   updateBall();
@@ -49,7 +49,7 @@ void draw()
 void drawBall()
 {
   noStroke();
-  fill(ballBrightness, ballBrightness, ballBrightness, 200);
+  fill(255, 255, 255, 200);
   ellipse(x, y, ballDiameter, ballDiameter);
 }
 
@@ -88,18 +88,14 @@ void processPosition()
   float yRatio = (y - (height / 2)) / (minCircleDiameter / 2);
   vX -= xRatio / 15;
   vY -= yRatio / 15;
-  println(ratio);
   if (ratio >= 1) {
     
     if (cAngle >= 1 * PI / 6 && cAngle < 5 * PI / 6) {
       redQueue++;
-      println("RED");
     } else if ((cAngle >= 5 * PI / 6 && cAngle < 9 * PI / 6)) {
       blueQueue++;
-      println("BLUE");
     } else if ((cAngle >= 9 * PI / 6 && cAngle < 12 * PI / 6) || (cAngle > 0 && cAngle < 1 * PI / 6)) {
       greenQueue++;
-      println("GREEN");
     }
   }
 }
